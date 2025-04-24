@@ -1,1 +1,12 @@
-// codemagic.yaml placeholder content
+workflows:
+  flutter-build:
+    name: Flutter Build
+    max_build_duration: 20
+    environment:
+      flutter: stable
+      xcode: latest
+    scripts:
+      - flutter pub get
+      - flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
